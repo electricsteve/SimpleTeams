@@ -1,0 +1,34 @@
+prefix: "<dark_gray>[<aqua>SimpleTeams</aqua>]</dark_gray> "
+
+limits:
+  max-teams: 100
+  max-members-per-team: 20
+  max-name-length: 24
+  min-name-length: 3
+  max-prefix-length: 16
+  allow-colored-prefix: true
+
+validation:
+  allowed-name-chars: "a-zA-Z0-9_-"
+  blacklisted-names: []
+
+chat:
+  enabled: true
+  format: "{team_prefix}<white>{player}</white><dark_gray>:</dark_gray> <gray>{message}</gray>"
+
+invites:
+  enabled: true
+  expire-seconds: 60
+
+team-chat:
+  enabled: true
+  format: "<dark_gray>[<aqua>Team Chat</aqua>]</dark_gray> <gray>{rank} {player}:</gray> <white>{message}</white>"
+
+top:
+  entries: 10
+
+update-checker:
+  enabled: true
+
+bstats:
+  enabled: true
