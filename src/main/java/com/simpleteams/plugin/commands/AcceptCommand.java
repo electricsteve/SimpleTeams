@@ -54,7 +54,7 @@ public class AcceptCommand extends TeamSubCommand {
         }
 
         plugin.getTeamManager().clearInvite(player.getUniqueId());
-        JoinResult result = plugin.getTeamManager().joinTeam(player, team);
+        JoinResult result = plugin.getTeamManager().joinTeam(player, team, true);
         if (result == JoinResult.SUCCESS) {
             plugin.getMessageManager().send(sender, "inviteAccepted", "team", team.getName());
             broadcast(team, player.getUniqueId(), "inviteAcceptedBroadcast", "player", player.getName());

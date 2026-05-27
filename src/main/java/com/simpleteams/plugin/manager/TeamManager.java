@@ -109,14 +109,14 @@ public class TeamManager {
         SUCCESS, ALREADY_IN_TEAM, BANNED, CLOSED, FULL
     }
 
-    public JoinResult joinTeam(Player player, Team team) {
+    public JoinResult joinTeam(Player player, Team team, boolean invite) {
         if (hasTeam(player.getUniqueId())) {
             return JoinResult.ALREADY_IN_TEAM;
         }
         if (team.isBanned(player.getUniqueId())) {
             return JoinResult.BANNED;
         }
-        if (!team.isOpen() && !player.hasPermission("simpleteams.admin.bypass")) {
+        if (!invite && !team.isOpen() && !player.hasPermission("simpleteams.admin.bypass")) {
             return JoinResult.CLOSED;
         }
         if (team.getMemberCount() >= plugin.getConfigManager().getMaxMembers()) {

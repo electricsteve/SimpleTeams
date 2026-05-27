@@ -56,7 +56,7 @@ public class JoinCommand extends TeamSubCommand {
         }
         Team team = opt.get();
 
-        JoinResult result = plugin.getTeamManager().joinTeam(player, team);
+        JoinResult result = plugin.getTeamManager().joinTeam(player, team, false);
         switch (result) {
             case SUCCESS -> {
                 plugin.getMessageManager().send(sender, "teamJoined", "team", team.getName());
